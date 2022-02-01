@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!-- Constraint layout for vertically aligned views.
+     Using chains allow us to properly group and align views
+     at the right place -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".fragments.InstructionFragment">
+
+        <TextView
+            android:id="@+id/tv_guide"
+            style="@style/MaterialAlertDialog.Material3.Title.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/guide"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_guide_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_guide_detail"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/actor"
+            android:text="@string/guide_details"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_guide_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_guide" />
+
+        <ImageView
+            android:id="@+id/iv_guide_pic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/login_title"
+            android:src="@drawable/guide_pic"
+            app:layout_constraintBottom_toTopOf="@+id/btn_continue"
+            app:layout_constraintEnd_toEndOf="@+id/tv_guide_detail"
+            app:layout_constraintStart_toStartOf="@+id/tv_guide_detail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_guide_detail" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/continue_txt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_guide_detail"
+            app:layout_constraintStart_toStartOf="@+id/tv_guide_detail"
+            app:layout_constraintTop_toBottomOf="@+id/iv_guide_pic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <!-- Constraint layout
+        for vertically and horizontally aligned views.
+         That way we avoid linear layout nesting -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/shoe_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/list_item_shoe_name, shoe.name)}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lite Racer Adapt"/>
+
+        <TextView
+            android:id="@+id/shoe_item_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@{String.format(@string/list_item_shoe_size, shoe.size)}"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_item_name"
+            app:layout_constraintStart_toEndOf="@+id/shoe_item_name"
+            app:layout_constraintTop_toTopOf="@+id/shoe_item_name"
+            tools:text="Size: 12" />
+
+        <TextView
+            android:id="@+id/shoe_item_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{String.format(@string/list_item_shoe_company, shoe.company)}"
+            app:layout_constraintStart_toStartOf="@+id/shoe_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_item_name"
+            tools:text="Comapny: adidas" />
+
+        <TextView
+            android:id="@+id/shoe_item_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:text="@{String.format(@string/list_item_shoe_description, shoe.description)}"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_item_image"
+            app:layout_constraintStart_toStartOf="@+id/shoe_item_name"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_item_company"
+            tools:text="Men's cushioned slip-on shoes with the look of runners, made with recycled materials." />
+
+        <ImageView
+            android:id="@+id/shoe_item_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="@string/list_item_shoe_description"
+            android:src="@drawable/ic_blank_image"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_item_description"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
