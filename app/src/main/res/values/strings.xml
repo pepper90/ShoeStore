@@ -31,6 +31,7 @@
     <!-- Shoe list screen strings -->
     <string name="pick_shoes">Model Picker</string>
     <string name="navigate_to_detail">See details</string>
+    <string name="logout_menu">Logout</string>
 
     <!-- Shoe details screen strings -->
     <string name="shoe_details">Add New Model</string>
