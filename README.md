@@ -13,6 +13,6 @@ The project uses :
 - Fragments
 - Safe-args
 - Material components
-- MVVM patters with shared viewmodel & LiveData
+- MVVM patters with shared ViewModel & LiveData
 - Constraint layout
 - View & Data Binding
